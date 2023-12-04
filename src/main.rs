@@ -5,12 +5,12 @@ fn main() {
     
     for line in fs::read_to_string("input.txt").unwrap().lines(){
         let mut result = String::new();
+        
         let ints = &line.replace(&*letters, "");
         
-        println!("{ints}");
         result += &ints.chars().next().unwrap().to_string();
         result += &ints.chars().last().unwrap().to_string();
-        println!("{result}");
+       
         total += result.parse::<i32>().unwrap();
     }
     
